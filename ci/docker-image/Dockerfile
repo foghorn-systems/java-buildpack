@@ -11,6 +11,9 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+ 
+#Test
+RUN mkdir /opt/fh
 
 RUN locale-gen en_US.UTF-8 \
  && /usr/sbin/update-locale LANG=en_US.UTF-8 \
