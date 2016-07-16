@@ -40,3 +40,11 @@ RUN eval "$(rbenv init -)" \
 
 RUN eval "$(rbenv init -)" \
 && rbenv install 2.3.1
+
+RUN \
+    apt-get update && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository ppa:ubuntu-toolchain-r/test && apt-get update && \
+    apt-get upgrade -y && \
+    apt-get dist-upgrade -y && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
